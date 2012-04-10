@@ -5,6 +5,7 @@
 package com.softserve.server;
 
 import com.softserve.command.Command;
+import com.softserve.commandoperator.CommandOperatorFabric;
 import java.io.IOException;
 import org.eclipse.jetty.util.TypeUtil;
 import org.eclipse.jetty.websocket.WebSocket;
@@ -65,7 +66,7 @@ public class WebSocketThread extends AbstractSocketThread implements WebSocket, 
     @Override
     public void onMessage(String data) {
         System.out.printf("%s#onMessage %s\n", this.getClass().getSimpleName(), data);
-        
+        CommandOperatorFabric.getInstance(data).operate();
     }
 
     @Override
