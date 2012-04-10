@@ -3,8 +3,6 @@
  * and open the template in the editor.
  */
 package com.softserve.commandoperator;
-
-import com.google.gson.Gson;
 import com.softserve.command.Command;
 
 /**
