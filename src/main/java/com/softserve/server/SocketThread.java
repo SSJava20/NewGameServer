@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Nubaseg
  */
-public class SocketThread implements Runnable {
+public class SocketThread extends AbstractSocketThread implements Runnable {
 
     private Thread playerThread;
     private Socket clientSocket;
@@ -50,5 +50,10 @@ public class SocketThread implements Runnable {
             System.out.println(getStringCommand);
         }
         Thread.currentThread().interrupt();
+    }
+
+    @Override
+    public void SendCommand(String command) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
