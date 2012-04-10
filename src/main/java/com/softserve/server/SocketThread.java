@@ -19,9 +19,10 @@ public class SocketThread extends AbstractSocketThread implements Runnable {
     private Thread playerThread;
     private Socket clientSocket;
     private CommandOperator operator;
-    
-    public SocketThread() {
+
+    public SocketThread(Socket clientSocket, ServerMediator mediator) {
         this.clientSocket = clientSocket;
+        this.mediator = mediator;
         playerThread = new Thread(this);
         playerThread.start();
     }
