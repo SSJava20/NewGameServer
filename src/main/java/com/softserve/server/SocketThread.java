@@ -56,7 +56,7 @@ public class SocketThread extends AbstractSocketThread implements Runnable {
     }
 
     @Override
-    public void SendCommand(Command command) {
+    public void sendCommand(String command) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

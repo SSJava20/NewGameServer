@@ -7,6 +7,8 @@ package com.softserve.server;
 import com.softserve.command.Command;
 import com.softserve.commandoperator.CommandOperatorFabric;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.eclipse.jetty.util.TypeUtil;
 import org.eclipse.jetty.websocket.WebSocket;
 
@@ -59,8 +61,13 @@ public class WebSocketThread extends AbstractSocketThread implements WebSocket, 
         return false;
     }
 
-    public void sendCommand(String commandString) throws IOException {
-        connection.sendMessage(commandString);
+    @Override
+    public void sendCommand(String commandString) {
+        try {
+            connection.sendMessage(commandString);
+        } catch (IOException ex) {
+            Logger.getLogger(WebSocketThread.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -72,10 +79,5 @@ public class WebSocketThread extends AbstractSocketThread implements WebSocket, 
     @Override
     public void onMessage(byte[] data, int offset, int length) {
         System.out.printf("%s#onMessage     %s\n", this.getClass().getSimpleName(), TypeUtil.toHexString(data, offset, length));
-    }
-
-    @Override
-    public void SendCommand(Command command) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
