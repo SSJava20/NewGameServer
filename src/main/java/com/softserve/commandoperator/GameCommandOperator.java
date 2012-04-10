@@ -23,7 +23,16 @@ public class GameCommandOperator extends CommandOperator {
     @Override
     public void operate(AbstractSocketThread thread) {
         switch (cur.getType()) {
-            
+            case Command.MOVE: {
+
+                break;
+            }
+            case Command.SEND_GAME_STATE: {
+
+                break;
+            }
+            default: {
+            }
         }
 
     }
