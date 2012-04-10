@@ -18,15 +18,13 @@ public class SocketThread implements Runnable {
     private Thread playerThread;
     private Socket clientSocket;
     private ServerMediator mediator;
+    private CommandOperator operator;
     
     public SocketThread(ServerMediator mediator) {
         this.clientSocket = clientSocket;
         this.mediator = mediator;
         playerThread = new Thread(this);
         playerThread.start();
-    }
-
-    private void operateCommand(String command) {
     }
 
     public void run() {
@@ -40,7 +38,7 @@ public class SocketThread implements Runnable {
             try {
                 getStringCommand = in.nextLine();
                 System.out.println(getStringCommand);
-                operateCommand(getStringCommand);
+                operator.operate(getStringCommand);
             } catch (Exception e) {
                 try {
                     clientSocket.close();
