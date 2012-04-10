@@ -4,12 +4,14 @@
  */
 package com.softserve.server;
 
+import com.softserve.command.Command;
+
 /**
  *
  * @author Nubaseg
  */
 public abstract class AbstractSocketThread {
     
-    public abstract void SendCommand(String command);
+    public abstract void SendCommand(Command command);
     
 }

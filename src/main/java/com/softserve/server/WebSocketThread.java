@@ -4,6 +4,8 @@
  */
 package com.softserve.server;
 
+import com.softserve.command.Command;
+
 /**
  *
  * @author Nubaseg
@@ -11,8 +13,9 @@ package com.softserve.server;
 public class WebSocketThread extends AbstractSocketThread{
 
     @Override
-    public void SendCommand(String command) {
+    public void SendCommand(Command command) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
+
+       
 }
