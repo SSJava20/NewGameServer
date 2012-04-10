@@ -150,7 +150,7 @@ public class TicTacGame extends Game
         State.setCurrentPlayer(cp);
     }
 
-    public void Move(AbstractSocketThread sender, Point from, Point to)
+    public void Move(AbstractSocketThread sender,Point to)
     {
         if(State.Board[to.x][to.y] == ' ' && State.getWhoWon() == ' ')
             if(sender.getMark() == State.getCurrentPlayer())
