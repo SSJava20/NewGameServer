@@ -20,7 +20,7 @@ public abstract class Game
         return State;
     }
 
-    public void setState(GameState state)
+    public void setState(GameState state, AbstractSocketThread sender)
     {
         State = state;
     }
