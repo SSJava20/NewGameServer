@@ -11,7 +11,22 @@ import com.softserve.command.Command;
  * @author Nubaseg
  */
 public abstract class AbstractSocketThread {
-    
+
+    private char mark;
+
     public abstract void SendCommand(Command command);
-    
+
+    /**
+     * @return the mark
+     */
+    public char getMark() {
+        return mark;
+    }
+
+    /**
+     * @param mark the mark to set
+     */
+    public void setMark(char mark) {
+        this.mark = mark;
+    }
 }
