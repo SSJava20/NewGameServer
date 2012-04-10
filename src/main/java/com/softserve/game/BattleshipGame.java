@@ -31,7 +31,7 @@ public class BattleshipGame extends Game
     }
 
     @Override
-    public void Move(AbstractSocketThread sender, Point from, Point to)
+    public void Move(AbstractSocketThread sender, Point to)
     {
         //To change body of implemented methods use File | Settings | File Templates.
     }
