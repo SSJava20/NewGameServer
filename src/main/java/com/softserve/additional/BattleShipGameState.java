@@ -13,7 +13,9 @@ class Ship
 {}
 public class BattleShipGameState extends GameState
 {
-    ArrayList<Ship> ships;
+    protected ArrayList<Ship> ships;
+
+    protected char[][] SecondBoard;
 
     public BattleShipGameState(char curPlayer, char WWon, boolean CErr, char[][] board)
     {
