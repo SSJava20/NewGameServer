@@ -9,18 +9,18 @@ import com.softserve.server.AbstractSocketThread;
 import com.softserve.server.SocketThread;
 
 /**
- *
+ * 
  * @author Jeka Class to operate the Game commands
  */
 public class GameCommandOperator extends CommandOperator {
 
-    private Command cur;
+	private Command cur;
 
-    public GameCommandOperator(Command command) {
-        cur = command;
-    }
+	public GameCommandOperator(Command command) {
+		cur = command;
+	}
 
-    @Override
+	@Override
     public void operate(AbstractSocketThread thread) {
         switch (cur.getType()) {
             case Command.MOVE: {
@@ -30,6 +30,9 @@ public class GameCommandOperator extends CommandOperator {
             case Command.SEND_GAME_STATE: {
 
                 break;
+            }
+            case Command.SEND_PLAYER_MARK :{
+            	break;
             }
             default: {
             }

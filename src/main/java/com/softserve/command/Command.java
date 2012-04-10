@@ -12,6 +12,7 @@ public class Command {
     static public final int PLAYER_DATA = 8;
     static public final int SEND_PLAYER_MARK = 9;
     static public final int CLOSE_GAME = 10;
+    static public final int SEND_SHIP_LAYOUT = 11;
     private String data;
     private int comandType;
 
