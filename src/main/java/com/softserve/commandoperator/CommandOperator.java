@@ -4,10 +4,13 @@
  */
 package com.softserve.commandoperator;
 
+import com.softserve.server.AbstractSocketThread;
+import com.softserve.server.SocketThread;
+
 /**
  *
  * @author Nubaseg
  */
 public abstract  class CommandOperator {
-    public abstract void operate();
+    public abstract void operate(AbstractSocketThread thread);
 }

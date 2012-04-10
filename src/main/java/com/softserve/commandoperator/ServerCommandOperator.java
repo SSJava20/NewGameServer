@@ -5,6 +5,8 @@
 package com.softserve.commandoperator;
 
 import com.softserve.command.Command;
+import com.softserve.server.AbstractSocketThread;
+import com.softserve.server.SocketThread;
 
 /**
  *
@@ -12,13 +14,15 @@ import com.softserve.command.Command;
  * Class to operate the Server commands
  */
 public class ServerCommandOperator extends CommandOperator{
-    
+    private Command cur;
     public ServerCommandOperator(Command command){
         
     }
     @Override
-    public void operate() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void operate(AbstractSocketThread thread) {
+        switch (cur.getType()) {
+        
+        }
     }
     
 }

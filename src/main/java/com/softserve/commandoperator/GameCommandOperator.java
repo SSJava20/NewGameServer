@@ -5,20 +5,26 @@
 package com.softserve.commandoperator;
 
 import com.softserve.command.Command;
+import com.softserve.server.AbstractSocketThread;
+import com.softserve.server.SocketThread;
 
 /**
  *
- * @author Jeka
- * Class to operate the Game commands
+ * @author Jeka Class to operate the Game commands
  */
-public class GameCommandOperator extends CommandOperator{
-    
-    public GameCommandOperator(Command command){
-        
+public class GameCommandOperator extends CommandOperator {
+
+    private Command cur;
+
+    public GameCommandOperator(Command command) {
+        cur = command;
     }
+
     @Override
-    public void operate() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void operate(AbstractSocketThread thread) {
+        switch (cur.getType()) {
+            
+        }
+
     }
-    
 }
