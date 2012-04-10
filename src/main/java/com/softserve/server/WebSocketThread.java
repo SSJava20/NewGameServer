@@ -66,7 +66,7 @@ public class WebSocketThread extends AbstractSocketThread implements WebSocket, 
     @Override
     public void onMessage(String data) {
         System.out.printf("%s#onMessage %s\n", this.getClass().getSimpleName(), data);
-        CommandOperatorFabric.getInstance(data).operate();
+        CommandOperatorFabric.getInstance(data).operate(this);
     }
 
     @Override
