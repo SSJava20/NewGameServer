@@ -19,7 +19,7 @@ public class CommandOperatorFabric {
     static public CommandOperator getInstance(String command) {
         Command curCommand = Command.deserialize(command);
         int type = curCommand.getType();
-        if (type == Command.SEND_GAME_STATE && type == Command.MOVE) {
+        if (type == Command.SEND_GAME_STATE || type == Command.MOVE) {
             return new GameCommandOperator(curCommand);
         } else {
             return new ServerCommandOperator(curCommand);

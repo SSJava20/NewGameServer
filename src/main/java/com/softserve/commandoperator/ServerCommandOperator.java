@@ -9,9 +9,11 @@ import com.softserve.command.Command;
 import com.softserve.command.server.Accept;
 import com.softserve.command.server.PlayerData;
 import com.softserve.command.server.RequestGame;
+import com.softserve.command.server.ResendRequestGame;
 import com.softserve.server.AbstractSocketThread;
 import com.softserve.server.SocketThread;
 import java.awt.Point;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,6 +22,7 @@ import java.awt.Point;
 public class ServerCommandOperator extends CommandOperator {
 
     private Command cur;
+    private AbstractSocketThread curThread;
 
     public ServerCommandOperator(Command command) {
         cur = command;
@@ -27,13 +30,14 @@ public class ServerCommandOperator extends CommandOperator {
 
     @Override
     public void operate(AbstractSocketThread thread) {
+        curThread=thread;
         Gson gson = new Gson();
         switch (cur.getType()) {
             case Command.REQUEST_GAME: {
-
                 RequestGame requestgame = gson.fromJson(cur.getStringData(),
                         RequestGame.class);
                 //requestNewGametoThread(requestgame.getCurId());
+
                 break;
             }
             case Command.ACCEPT: {
@@ -64,4 +68,16 @@ public class ServerCommandOperator extends CommandOperator {
             }
         }
     }
+
+    private void requestNewGame(int id) {
+        Command command = new Command(new ResendRequestGame(id));
+        curThread.SendCommand(command);
+    }
+
+    private void requestNewGametoThread(int id) {
+        ArrayList<AbstractSocketThread> list=curThread.getMediator().getServerThreads();
+        //ServerThread opponentServerThread = server.getServerThreadById(id);
+        //opponentServerThread.requestNewGame(server.serverThreads.indexOf(this));
+    }
+
 }
