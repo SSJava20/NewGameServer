@@ -12,5 +12,4 @@ public class CommandOperator {
     public void operate(String command) {
         
     }
-    
 }

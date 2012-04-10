@@ -31,16 +31,15 @@ public class SocketServer {
         socketThreads = new ArrayList<SocketThread>();
         try {
             mServerSocket = new ServerSocket(port, 0, ipAddress);
-            System.out.println(" " + ipAddress + ":" + port);
+            System.out.println("Running socketserver at " + ipAddress + ":" + port);
             while (true) {
                 Socket nSocket = mServerSocket.accept();
-                System.out.println("");
+                System.out.println("Client socket connected");
                 // serverThreads.add(new ServerThread(this, nSocket));
             }
         } catch (IOException e) {
         } finally {
             mServerSocket.close();
         }
-
     }
 }

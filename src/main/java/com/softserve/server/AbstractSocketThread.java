@@ -13,6 +13,7 @@ import com.softserve.command.Command;
 public abstract class AbstractSocketThread {
 
     private char mark;
+    ServerMediator mediator;
 
     public abstract void SendCommand(Command command);
 

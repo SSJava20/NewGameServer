@@ -18,12 +18,10 @@ public class SocketThread extends AbstractSocketThread implements Runnable {
 
     private Thread playerThread;
     private Socket clientSocket;
-    private ServerMediator mediator;
     private CommandOperator operator;
     
-    public SocketThread(ServerMediator mediator) {
+    public SocketThread() {
         this.clientSocket = clientSocket;
-        this.mediator = mediator;
         playerThread = new Thread(this);
         playerThread.start();
     }
@@ -56,5 +54,33 @@ public class SocketThread extends AbstractSocketThread implements Runnable {
     @Override
     public void SendCommand(Command command) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    /**
+     * @return the playerThread
+     */
+    public Thread getPlayerThread() {
+        return playerThread;
+    }
+
+    /**
+     * @return the mediator
+     */
+    public ServerMediator getMediator() {
+        return mediator;
+    }
+
+    /**
+     * @param playerThread the playerThread to set
+     */
+    public void setPlayerThread(Thread playerThread) {
+        this.playerThread = playerThread;
+    }
+
+    /**
+     * @param mediator the mediator to set
+     */
+    public void setMediator(ServerMediator mediator) {
+        this.mediator = mediator;
     }
 }
