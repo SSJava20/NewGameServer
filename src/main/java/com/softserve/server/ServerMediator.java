@@ -4,6 +4,7 @@
  */
 package com.softserve.server;
 
+import com.softserve.command.FreePlayer;
 import java.util.ArrayList;
 
 /**
@@ -22,6 +23,14 @@ public class ServerMediator {
         return socketThreads;
     }
 
-//    public ArrayList<SocketThread> getFreeserverThreads() {
-//    }
+    public ArrayList<FreePlayer> getFreePlayerList() {
+        ArrayList<FreePlayer> freeList = new ArrayList<FreePlayer>();
+        for(int i = 0; i<socketThreads.size(); i++)
+        {
+            if(socketThreads.get(i).getMyGame() == null)
+                freeList.add(new FreePlayer(i, socketThreads.get(i).getName()));
+        }
+        return freeList;
+    }
+
 }
