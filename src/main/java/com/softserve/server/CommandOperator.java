@@ -8,9 +8,6 @@ package com.softserve.server;
  *
  * @author Nubaseg
  */
-public class CommandOperator {
-    public void operate(String command) {
-        
-    }
-    
+public abstract  class CommandOperator {
+    public abstract void operate();
 }

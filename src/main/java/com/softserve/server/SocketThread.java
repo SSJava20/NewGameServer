@@ -39,7 +39,7 @@ public class SocketThread extends AbstractSocketThread implements Runnable {
             try {
                 getStringCommand = in.nextLine();
                 System.out.println(getStringCommand);
-                operator.operate(getStringCommand);
+                CommandOperatorFabric.getInstance(getStringCommand).operate();
             } catch (Exception e) {
                 try {
                     clientSocket.close();
