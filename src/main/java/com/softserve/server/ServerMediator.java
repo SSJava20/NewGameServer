@@ -12,13 +12,13 @@ import java.util.ArrayList;
  */
 public class ServerMediator {
 
-    private ArrayList<SocketThread> socketThreads;
+    private ArrayList<AbstractSocketThread> socketThreads;
 
     public ServerMediator() {
-        socketThreads = new ArrayList<SocketThread>();
+        socketThreads = new ArrayList<AbstractSocketThread>();
     }
 
-    public ArrayList<SocketThread> getServerThreads() {
+    public ArrayList<AbstractSocketThread> getServerThreads() {
         return socketThreads;
     }
 

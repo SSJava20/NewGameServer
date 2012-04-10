@@ -10,12 +10,10 @@ import com.softserve.command.Command;
  *
  * @author Nubaseg
  */
-public class WebSocketThread extends AbstractSocketThread{
+public class WebSocketThread extends AbstractSocketThread {
 
     @Override
     public void SendCommand(Command command) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
-       
 }
