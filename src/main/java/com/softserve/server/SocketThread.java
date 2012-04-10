@@ -7,6 +7,7 @@ package com.softserve.server;
 import com.softserve.commandoperator.CommandOperator;
 import com.softserve.commandoperator.CommandOperatorFabric;
 import com.softserve.command.Command;
+import com.softserve.game.Game;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;

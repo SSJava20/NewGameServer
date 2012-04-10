@@ -5,7 +5,6 @@
 package com.softserve.commandoperator;
 
 import com.softserve.server.AbstractSocketThread;
-import com.softserve.server.SocketThread;
 
 /**
  *
