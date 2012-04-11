@@ -31,11 +31,6 @@ public class ServerCommandOperatorTest extends TestCase {
      * Test of operate method, of class ServerCommandOperator.
      */
     public void testOperate() {
-        System.out.println("operate");
-        AbstractSocketThread thread = null;
-        ServerCommandOperator instance = null;
-        instance.operate(thread);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 }

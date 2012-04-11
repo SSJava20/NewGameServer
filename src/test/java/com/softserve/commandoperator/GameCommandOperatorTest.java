@@ -31,11 +31,6 @@ public class GameCommandOperatorTest extends TestCase {
      * Test of operate method, of class GameCommandOperator.
      */
     public void testOperate() {
-        System.out.println("operate");
-        AbstractSocketThread thread = null;
-        GameCommandOperator instance = null;
-        instance.operate(thread);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 }
