@@ -4,6 +4,7 @@ import com.softserve.server.AbstractSocketThread;
 import com.softserve.additional.GameState;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public abstract class Game
 {
@@ -14,6 +15,7 @@ public abstract class Game
     protected abstract void CheckForWin(Point moveCord);
     protected abstract void start();
     public abstract void Move(AbstractSocketThread sender, Point to);
+    public abstract void setLayout(ArrayList<Ship> ships, AbstractSocketThread player);
 
     public GameState getState()
     {

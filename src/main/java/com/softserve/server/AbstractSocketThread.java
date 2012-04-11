@@ -34,6 +34,10 @@ public abstract class AbstractSocketThread {
     public char getMark() {
         return mark;
     }
+    
+    public ServerMediator getMediator(){
+        return mediator;
+    }
 
     /**
      * @param mark the mark to set
