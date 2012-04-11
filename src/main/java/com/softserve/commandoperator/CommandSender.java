@@ -7,9 +7,13 @@ package com.softserve.commandoperator;
 import com.softserve.additional.GameState;
 import com.softserve.command.Command;
 import com.softserve.command.FreePlayer;
+import com.softserve.command.game.Move;
 import com.softserve.command.game.SendGameState;
 import com.softserve.command.server.SendPlayerList;
+import com.softserve.game.Ship;
 import com.softserve.server.AbstractSocketThread;
+import java.awt.Point;
+import java.util.ArrayList;
 
 /**
  *
@@ -45,5 +49,13 @@ public class CommandSender {
     }
 
     public void SendCloseGame() {
+    }
+    
+    public void sendMove(Move move){
+        ownerThread.getMyGame().Move(ownerThread,new Point(move.getRow(),move.getCol()));
+    }
+    
+    public void sendShipLayout(ArrayList<Ship> ships){
+        ownerThread.getMyGame().setLayout(ships, ownerThread);
     }
 }
