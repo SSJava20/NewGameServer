@@ -36,7 +36,7 @@ public class GameCommandOperator extends CommandOperator {
             }
             case Command.SEND_GAME_STATE: {
                 SendGameState sgs = gson.fromJson(cur.getStringData(), SendGameState.class);
-                thread.getCommandSender().SendGameState(sgs.getGameState());
+                thread.getCommandSender().sendGameState(sgs.getGameState());
                 break;
             }
             case Command.SEND_PLAYER_MARK: {
