@@ -24,6 +24,8 @@ public class BattleshipGame extends Game {
 
     public BattleshipGame(AbstractSocketThread firstPlayer, AbstractSocketThread secondPlayer) {
         super(firstPlayer, secondPlayer);
+        fillWater(board1);
+        fillWater(board2);
     }
 
     @Override
@@ -38,13 +40,17 @@ public class BattleshipGame extends Game {
 
     @Override
     public void Move(AbstractSocketThread sender, Point to) {
-        if (board1[to.x][to.y] > 0) {
-
+        if (sender.equals(firstPlayer)) {
+            char id = board2[to.x][to.y];
+            if (id > 0) {
+                Ship s = getById(id, ships2);
+                s.hit();
+            }
         }
     }
 
-    public Ship getByCoords(char id) {
-        for (Ship s : ships1) {
+    public Ship getById(char id, ArrayList<Ship> ships) {
+        for (Ship s : ships) {
             if (s.getId() == id) {
                 Ship sf = s;
                 return sf;
@@ -53,11 +59,27 @@ public class BattleshipGame extends Game {
         return null;
     }
 
+    public void fillWater(char[][] board) {
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            for (int j = 0; j < BOARD_SIZE; j++) {
+                board[i][j] = EMPTY_CELL;
+            }
+        }
+    }
+
+    public void fillShips(ArrayList<Ship> ships, char[][] board) {
+        for (Ship s : ships) {
+            s.paintToBoard(board);
+        }
+    }
+
     public void setLayout(ArrayList<Ship> ships, AbstractSocketThread player) {
         if (player.equals(firstPlayer)) {
             this.ships1 = ships;
+            fillShips(ships, board1);
         } else {
             this.ships2 = ships;
+            fillShips(ships, board2);
         }
     }
 
