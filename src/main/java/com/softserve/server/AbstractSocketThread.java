@@ -5,6 +5,7 @@
 package com.softserve.server;
 
 import com.softserve.command.Command;
+import com.softserve.commandoperator.CommandSender;
 import com.softserve.game.Game;
 
 /**
@@ -13,10 +14,11 @@ import com.softserve.game.Game;
  */
 public abstract class AbstractSocketThread {
 
-    private char mark;
-    ServerMediator mediator;
-    private Game myGame;
-    private String Name;
+    protected char mark;
+    protected ServerMediator mediator;
+    protected CommandSender commandSender;
+    protected Game myGame;
+    protected String Name;
 
     public AbstractSocketThread() {
         myGame = null;
@@ -24,7 +26,7 @@ public abstract class AbstractSocketThread {
     
     
 
-    public abstract void SendCommand(Command command);
+    public abstract void sendCommand(String command);
 
     /**
      * @return the mark
@@ -70,5 +72,33 @@ public abstract class AbstractSocketThread {
      */
     public void setName(String Name) {
         this.Name = Name;
+    }
+
+    /**
+     * @return the mediator
+     */
+    public ServerMediator getMediator() {
+        return mediator;
+    }
+
+    /**
+     * @return the commandSender
+     */
+    public CommandSender getCommandSender() {
+        return commandSender;
+    }
+
+    /**
+     * @param mediator the mediator to set
+     */
+    public void setMediator(ServerMediator mediator) {
+        this.mediator = mediator;
+    }
+
+    /**
+     * @param commandSender the commandSender to set
+     */
+    public void setCommandSender(CommandSender commandSender) {
+        this.commandSender = commandSender;
     }
 }
