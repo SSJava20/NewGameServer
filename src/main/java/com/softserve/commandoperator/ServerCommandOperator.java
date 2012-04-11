@@ -36,48 +36,31 @@ public class ServerCommandOperator extends CommandOperator {
             case Command.REQUEST_GAME: {
                 RequestGame requestgame = gson.fromJson(cur.getStringData(),
                         RequestGame.class);
-                //requestNewGametoThread(requestgame.getCurId());
-
+                thread.getCommandSender().SendRequestGame();
                 break;
             }
             case Command.ACCEPT: {
                 Accept accept = gson.fromJson(cur.getStringData(), Accept.class);
-                //acceptGame(server.getServerThreadById(accept.getAcceptedplayerid()));
+                thread.getCommandSender().SendAccept();
                 break;
             }
 
             case Command.GET_PLAYER_LIST: {
-                //sendPlayerList();
+                thread.getCommandSender().SendPlayerList();
                 break;
             }
             case Command.PLAYER_DATA: {
                 PlayerData pdata = gson.fromJson(cur.getStringData(),
                         PlayerData.class);
-                //this.setName(pdata.getName());
+                thread.setName(pdata.getName());
                 break;
             }
             case Command.CLOSE_GAME: {
-                //closeGame();
-                break;
-            }
-            case Command.SEND_PLAYER_MARK: {
-                //sendPlayerMark();
+                thread.getCommandSender().SendCloseGame();
                 break;
             }
             default: {
             }
         }
     }
-
-    private void requestNewGame(int id) {
-        Command command = new Command(new ResendRequestGame(id));
-        curThread.sendCommand(command.serialize());
-    }
-
-    private void requestNewGametoThread(int id) {
-        ArrayList<AbstractSocketThread> list=curThread.getMediator().getServerThreads();
-        //ServerThread opponentServerThread = server.getServerThreadById(id);
-        //opponentServerThread.requestNewGame(server.serverThreads.indexOf(this));
-    }
-
 }

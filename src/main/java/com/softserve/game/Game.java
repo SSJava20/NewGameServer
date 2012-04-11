@@ -15,7 +15,9 @@ public abstract class Game
     protected abstract void CheckForWin(Point moveCord);
     protected abstract void start();
     public abstract void Move(AbstractSocketThread sender, Point to);
-    public abstract void setLayout(ArrayList<Ship> ships, AbstractSocketThread player);
+    public void setLayout(ArrayList<Ship> ships, AbstractSocketThread player){
+
+    };
 
     public GameState getState()
     {
