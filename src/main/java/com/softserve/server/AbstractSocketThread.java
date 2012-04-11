@@ -34,7 +34,7 @@ public abstract class AbstractSocketThread {
     public char getMark() {
         return mark;
     }
-    
+
     /**
      * @param mark the mark to set
      */

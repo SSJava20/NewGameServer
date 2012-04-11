@@ -27,7 +27,7 @@ public class CommandSender {
         this.ownerThread = ownerThread;
     }
 
-    public void SendGameState(GameState state) {
+    public void sendGameState(GameState state) {
         Command command = new Command(new SendGameState(state));
         ownerThread.sendCommand(command.serialize());
     }

@@ -1,5 +1,7 @@
 package com.softserve.additional;
 
+import com.softserve.game.Ship;
+
 import java.util.ArrayList;
 
 /**
@@ -9,8 +11,7 @@ import java.util.ArrayList;
  * Time: 21:06
  * To change this template use File | Settings | File Templates.
  */
-class Ship
-{}
+
 public class BattleShipGameState extends GameState
 {
     protected ArrayList<Ship> ships;

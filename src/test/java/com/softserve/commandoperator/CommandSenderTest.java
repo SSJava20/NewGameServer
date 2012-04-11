@@ -32,7 +32,6 @@ public class CommandSenderTest extends TestCase {
     public void testSendGameState() {
         System.out.println("SendGameState");
         CommandSender instance = null;
-        instance.SendGameState();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

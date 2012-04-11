@@ -73,6 +73,7 @@ public class BattleshipGame extends Game {
         }
     }
 
+    @Override
     public void setLayout(ArrayList<Ship> ships, AbstractSocketThread player) {
         if (player.equals(firstPlayer)) {
             this.ships1 = ships;
