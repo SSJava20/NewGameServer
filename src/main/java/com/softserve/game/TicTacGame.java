@@ -4,6 +4,7 @@ import com.softserve.additional.GameState;
 import com.softserve.server.AbstractSocketThread;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -162,5 +163,10 @@ public class TicTacGame extends Game
             }
 
         SendStates();
+    }
+
+    @Override
+    public void setLayout(ArrayList<Ship> ships, AbstractSocketThread player) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

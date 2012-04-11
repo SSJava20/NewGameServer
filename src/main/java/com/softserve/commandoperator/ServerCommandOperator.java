@@ -71,7 +71,7 @@ public class ServerCommandOperator extends CommandOperator {
 
     private void requestNewGame(int id) {
         Command command = new Command(new ResendRequestGame(id));
-        curThread.SendCommand(command);
+        curThread.sendCommand(command.serialize());
     }
 
     private void requestNewGametoThread(int id) {
