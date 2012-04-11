@@ -8,8 +8,8 @@ package com.softserve.game;
  * To change this template use File | Settings | File Templates.
  */
 public class Ship {
-    private static int id_counter = 0;
-    private int id;
+    private static char id_counter = 'a';
+    private char id;
     private int size;
     private int health;
     private int x;
@@ -32,6 +32,10 @@ public class Ship {
         health--;
     }
 
+    public char getId() {
+        return id;
+    }
+
     public boolean isDestroyed() {
         boolean destroyed = (health == 0);
         return destroyed;
@@ -40,7 +44,7 @@ public class Ship {
     public void paintToBoard(char[][] board) {
         for (int i = x; i <= dx; i++) {
             for (int j = y; j <= dy; j++) {
-                board[i][j] = (char) this.id;
+                board[i][j] = this.id;
             }
         }
 
