@@ -7,6 +7,7 @@ package com.softserve.server;
 import com.softserve.commandoperator.CommandOperator;
 import com.softserve.commandoperator.CommandOperatorFabric;
 import com.softserve.command.Command;
+import com.softserve.game.Game;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
@@ -55,7 +56,7 @@ public class SocketThread extends AbstractSocketThread implements Runnable {
     }
 
     @Override
-    public void SendCommand(Command command) {
+    public void sendCommand(String command) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
